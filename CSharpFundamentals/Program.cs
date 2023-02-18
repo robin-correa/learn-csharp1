@@ -320,5 +320,36 @@ class Program
         var summary = StringUtility.SummarizeText(sentence);
         Console.WriteLine(summary);
 
+        // String Builder (Note: No searching, functions can be chained .Append().AppendLine())
+        Console.WriteLine("String Builder: ");
+        var builder = new System.Text.StringBuilder();
+        builder.Append('-', 10);
+        builder.AppendLine();
+        builder.Append("Header");
+        builder.AppendLine();
+        builder.Append('-', 10);
+        Console.WriteLine(builder);
+
+        /* Result: 
+            ----------
+            Header
+            ----------
+        */
+
+        builder.Replace('-', '+');
+        Console.WriteLine(builder);
+
+        /* Result: 
+            ++++++++++
+            Header
+            ++++++++++
+        */
+        builder.Remove(0, 10);
+        Console.WriteLine(builder);
+
+        /* Result: 
+            Header
+            ++++++++++
+        */
     }
 }
