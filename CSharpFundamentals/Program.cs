@@ -191,6 +191,41 @@ class Program
         {
             Console.WriteLine(n);
         }
+
+        // [Lists]
+        Console.WriteLine("Lists(): ");
+        var numbers4 = new List<int>() { 1, 2, 34, 4 };
+        numbers4.Add(1); // 1 2 34 4 1
+        numbers4.AddRange(new int[3] { 5, 6, 7 }); // 1 2 34 4 1 5 6 7
+        foreach (var number in numbers4)
+        {
+            Console.WriteLine(number);
+        }
+
+        Console.WriteLine("Index of 1: " + numbers4.IndexOf(1)); // 0
+        Console.WriteLine("Last Index of 1: " + numbers4.LastIndexOf(1)); // 4
+
+        Console.WriteLine("Count: " + numbers4.Count); // 8
+
+        Console.WriteLine("Remove(): ");
+        for (var i = 0; i < numbers4.Count; i++)
+        {
+            if (numbers4[i] == 1)
+            {
+                numbers4.Remove(numbers4[i]);
+            }
+        }
+
+        foreach (var number in numbers4)
+        {
+            Console.WriteLine(number);
+        }
+
+        // Result: 2, 34, 4, 5, 6, 7
+
+        Console.WriteLine("Clear(): ");
+        numbers4.Clear();
+        Console.WriteLine("Count: " + numbers4.Count); // 0
     }
 
 }
