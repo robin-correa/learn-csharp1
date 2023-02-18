@@ -1,5 +1,5 @@
 
-namespace classes;
+namespace CustomClasses;
 public class Person
 {
     public string? FirstName; // Nullable type

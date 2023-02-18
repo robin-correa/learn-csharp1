@@ -1,4 +1,6 @@
-﻿using classes; // for Person class
+﻿using CustomClasses; // for Person class
+
+namespace CSharpFundamentals;
 
 class Program
 {
@@ -35,5 +37,29 @@ class Program
         Console.WriteLine(names[1]); // Regina
         Console.WriteLine(names[2]); // Jean
         // Console.WriteLine(names[3]); // Unhandled Exception
+
+        // [Strings]
+
+        var firstName = "Robin";
+        var lastName = "Correa";
+
+        var fullName = firstName + " " + lastName;
+        Console.WriteLine(fullName);  // Robin Correa
+        var myFullName = string.Format("My name is {0} {1}", firstName, lastName);
+        Console.WriteLine(myFullName);  // My name is Robin Correa
+
+        var formattedNames = string.Join(", ", names);
+
+        Console.WriteLine(formattedNames); // Robin, Regina, Jean
+
+        // Verbatim string
+        var text = @"Hi Robin, 
+        Look into the following paths:
+        c:\folder1\
+        c:\folder2\
+        c:\folder3\";
+
+        Console.WriteLine(text);
+
     }
 }
