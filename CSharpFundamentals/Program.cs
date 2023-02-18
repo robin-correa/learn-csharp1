@@ -276,6 +276,80 @@ class Program
 
         // Parse
         Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03")); // 01:02:03
-    }
 
+        // [Strings]
+
+        var fullName2 = "Robin Correa ";
+        Console.WriteLine("Trim: '{0}'", fullName2.Trim()); // 'Robin Correa'
+        Console.WriteLine("ToUpper: '{0}'", fullName2.Trim().ToUpper()); //'ROBIN CORREA'
+
+        var index2 = fullName2.IndexOf(' ');
+        var firstName2 = fullName2.Substring(0, index2); // from 0 to indexof " "
+        var lastName2 = fullName2.Substring(index2 + 1); // from indexof onwards
+        Console.WriteLine("FirstName: " + firstName2); // Robin
+        Console.WriteLine("LastName: " + lastName2); // Correa
+
+        var names2 = fullName2.Split(' ');
+        Console.WriteLine("FirstName: " + names2[0]); // Robin
+        Console.WriteLine("LastName: " + names2[1]); // Correa
+
+        Console.WriteLine(fullName2.Replace("Robin", "RJ")); // RJ Correa
+
+        // White space will treat as non-null or non-empty. Need to add Trim()
+        if (String.IsNullOrEmpty(" ".Trim()))
+        {
+            Console.WriteLine("IsNullOrEmpty: Invalid");
+        }
+
+        if (String.IsNullOrWhiteSpace(" "))
+        {
+            Console.WriteLine("IsNullOrWhiteSpace: Invalid");
+        }
+
+        var str = "25";
+        var age = Convert.ToByte(str);
+        Console.WriteLine(age); // 25
+
+        float price = 29.95f;
+        Console.WriteLine(price.ToString("C")); // $29.95
+        Console.WriteLine(price.ToString("C0")); // $30
+
+        // Summarizing Text
+        var sentence = "The quick brown fox jumps over the lazy dog.";
+
+        var summary = StringUtility.SummarizeText(sentence);
+        Console.WriteLine(summary);
+
+        // String Builder (Note: No searching, functions can be chained .Append().AppendLine())
+        Console.WriteLine("String Builder: ");
+        var builder = new System.Text.StringBuilder();
+        builder.Append('-', 10);
+        builder.AppendLine();
+        builder.Append("Header");
+        builder.AppendLine();
+        builder.Append('-', 10);
+        Console.WriteLine(builder);
+
+        /* Result: 
+            ----------
+            Header
+            ----------
+        */
+
+        builder.Replace('-', '+');
+        Console.WriteLine(builder);
+
+        /* Result: 
+            ++++++++++
+            Header
+            ++++++++++
+        */
+        builder.Remove(0, 10);
+        Console.WriteLine(builder);
+
+        /* Result: 
+            Header
+            ++++++++++
+        */
+    }
 }
