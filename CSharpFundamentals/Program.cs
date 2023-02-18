@@ -250,6 +250,32 @@ class Program
         Console.WriteLine("ToString: " + now.ToString()); // ToString: 18/2/2023 16:35:01
 
         Console.WriteLine("ToString with Format specifier (yyyy-MM-dd HH:mm): " + now.ToString("yyyy-MM-dd HH:mm")); // ToString: 18/2/2023 16:35:01
+
+        // [TimeSpan]
+
+        // Creating
+        var timeSpan = new TimeSpan(1, 2, 3); // 1 hour, 2 minutes, 3 seconds
+        var timeSpan1 = new TimeSpan(1, 0, 0);
+        var timeSpan2 = TimeSpan.FromHours(1);
+
+        var start = DateTime.Now;
+        var end = DateTime.Now.AddMinutes(2);
+        var duration = end - start;
+        Console.WriteLine("Duration: " + duration);
+
+        // Properties
+        Console.WriteLine("Minutes: " + timeSpan.Minutes); // 2
+        Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes); // 62.05
+
+        // Add
+        Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8))); // 01:10:03 (1 hour, 2 minutes, 3 seconds)
+        Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2))); // 01:10:03 (1 hour, 0 minutes, 3 seconds)
+
+        // ToString
+        Console.WriteLine("ToString: " + timeSpan.ToString()); // 01:02:03
+
+        // Parse
+        Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03")); // 01:02:03
     }
 
 }
