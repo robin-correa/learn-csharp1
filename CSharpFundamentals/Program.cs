@@ -226,6 +226,56 @@ class Program
         Console.WriteLine("Clear(): ");
         numbers4.Clear();
         Console.WriteLine("Count: " + numbers4.Count); // 0
+
+        // [Dates]
+
+        Console.WriteLine("Dates(): ");
+        var dateTime = new DateTime(2015, 1, 1);
+        var now = DateTime.Now;
+        Console.WriteLine("Now: " + now); // Now (Sample): 18/2/2023 16:28:59
+
+        var today = DateTime.Today;
+        Console.WriteLine("Today: " + today); // Today (Sample): 18/2/2023 16:28:59
+
+        Console.WriteLine("Hour: " + now.Hour); // HH
+        Console.WriteLine("Minute: " + now.Minute); // MM
+
+        var tomorrow = now.AddDays(1); // Tomorrow
+        var yesterday = now.AddDays(-1); // Yesterday
+
+        Console.WriteLine("ToLongDateString: " + now.ToLongDateString()); // ToLongDateString: Saturday, 18 February 2023
+        Console.WriteLine("ToShortDateString: " + now.ToShortDateString()); // ToShortDateString: 18/2/2023
+        Console.WriteLine("ToLongTimeString: " + now.ToLongTimeString()); // ToLongTimeString: 16:33:18
+        Console.WriteLine("ToShortTimeString: " + now.ToShortTimeString()); // ToShortTimeString: 16:33
+        Console.WriteLine("ToString: " + now.ToString()); // ToString: 18/2/2023 16:35:01
+
+        Console.WriteLine("ToString with Format specifier (yyyy-MM-dd HH:mm): " + now.ToString("yyyy-MM-dd HH:mm")); // ToString: 18/2/2023 16:35:01
+
+        // [TimeSpan]
+
+        // Creating
+        var timeSpan = new TimeSpan(1, 2, 3); // 1 hour, 2 minutes, 3 seconds
+        var timeSpan1 = new TimeSpan(1, 0, 0);
+        var timeSpan2 = TimeSpan.FromHours(1);
+
+        var start = DateTime.Now;
+        var end = DateTime.Now.AddMinutes(2);
+        var duration = end - start;
+        Console.WriteLine("Duration: " + duration);
+
+        // Properties
+        Console.WriteLine("Minutes: " + timeSpan.Minutes); // 2
+        Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes); // 62.05
+
+        // Add
+        Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8))); // 01:10:03 (1 hour, 2 minutes, 3 seconds)
+        Console.WriteLine("Subtract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2))); // 01:10:03 (1 hour, 0 minutes, 3 seconds)
+
+        // ToString
+        Console.WriteLine("ToString: " + timeSpan.ToString()); // 01:02:03
+
+        // Parse
+        Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03")); // 01:02:03
     }
 
 }
