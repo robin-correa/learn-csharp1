@@ -226,6 +226,30 @@ class Program
         Console.WriteLine("Clear(): ");
         numbers4.Clear();
         Console.WriteLine("Count: " + numbers4.Count); // 0
+
+        // [Dates]
+
+        Console.WriteLine("Dates(): ");
+        var dateTime = new DateTime(2015, 1, 1);
+        var now = DateTime.Now;
+        Console.WriteLine("Now: " + now); // Now (Sample): 18/2/2023 16:28:59
+
+        var today = DateTime.Today;
+        Console.WriteLine("Today: " + today); // Today (Sample): 18/2/2023 16:28:59
+
+        Console.WriteLine("Hour: " + now.Hour); // HH
+        Console.WriteLine("Minute: " + now.Minute); // MM
+
+        var tomorrow = now.AddDays(1); // Tomorrow
+        var yesterday = now.AddDays(-1); // Yesterday
+
+        Console.WriteLine("ToLongDateString: " + now.ToLongDateString()); // ToLongDateString: Saturday, 18 February 2023
+        Console.WriteLine("ToShortDateString: " + now.ToShortDateString()); // ToShortDateString: 18/2/2023
+        Console.WriteLine("ToLongTimeString: " + now.ToLongTimeString()); // ToLongTimeString: 16:33:18
+        Console.WriteLine("ToShortTimeString: " + now.ToShortTimeString()); // ToShortTimeString: 16:33
+        Console.WriteLine("ToString: " + now.ToString()); // ToString: 18/2/2023 16:35:01
+
+        Console.WriteLine("ToString with Format specifier (yyyy-MM-dd HH:mm): " + now.ToString("yyyy-MM-dd HH:mm")); // ToString: 18/2/2023 16:35:01
     }
 
 }
