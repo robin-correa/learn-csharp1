@@ -1,15 +1,7 @@
-﻿class Program
-{
-    public class Person
-    {
-        public string? FirstName; // Nullable type
-        public string? LastName; // Nullable type
+﻿using classes;
 
-        public void Introduce()
-        {
-            Console.WriteLine("My name is " + FirstName + " " + LastName);
-        }
-    }
+class Program
+{
     static void Main(string[] args)
     {
         var person1 = new Person();
