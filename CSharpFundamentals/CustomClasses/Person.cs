@@ -1,5 +1,5 @@
 
-namespace CustomClasses;
+namespace CSharpFundamentals.CustomClasses;
 public class Person
 {
     public string? FirstName; // Nullable type

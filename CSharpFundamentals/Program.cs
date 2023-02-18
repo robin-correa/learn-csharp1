@@ -1,4 +1,4 @@
-﻿using CustomClasses; // for Person class
+﻿using CSharpFundamentals.CustomClasses; // for Person class
 
 namespace CSharpFundamentals;
 
@@ -146,6 +146,50 @@ class Program
             }
 
             break;
+        }
+
+        // [Arrays]
+
+        var numbers3 = new[] { 3, 7, 9, 2, 14, 6 };
+
+        // Length
+        Console.WriteLine("Length: " + numbers3.Length); // Length: 6
+
+        // IndexOf()
+        var index = Array.IndexOf(numbers3, 9);
+        Console.WriteLine("IndexOf(): " + index); // Index: 2
+
+        // Clear() - setting the first 2 elements to 0 (Result: 0 0 9 2 14 6)
+        Console.WriteLine("Clear(): ");
+        Array.Clear(numbers3, 0, 2);
+        foreach (var n in numbers3)
+        {
+            Console.WriteLine(n);
+        }
+
+        // Copy()
+        int[] another = new int[3];
+        Array.Copy(numbers3, another, 3); // Result: 0 0 9
+        Console.WriteLine("Copy(): ");
+        foreach (var n in another)
+        {
+            Console.WriteLine(n);
+        }
+
+        // Sort()
+        Console.WriteLine("Sort(): ");
+        Array.Sort(numbers3); // 0 0 2 6 9 14
+        foreach (var n in numbers3)
+        {
+            Console.WriteLine(n);
+        }
+
+        // Reverse()
+        Console.WriteLine("Reverse(): ");
+        Array.Reverse(numbers3); // 14 9 6 2 0 0
+        foreach (var n in numbers3)
+        {
+            Console.WriteLine(n);
         }
     }
 
