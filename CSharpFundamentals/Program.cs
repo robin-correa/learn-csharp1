@@ -2,6 +2,14 @@
 
 namespace CSharpFundamentals;
 
+// Usage of enum:
+public enum ShippingMethod
+{
+    RegularAirMail = 1,
+    RegisteredAirMail = 2,
+    Express = 3
+}
+
 class Program
 {
     static void Main(string[] args)
@@ -61,5 +69,19 @@ class Program
 
         Console.WriteLine(text);
 
+        // [Enums]
+        var method = ShippingMethod.Express;
+        Console.WriteLine(method); // Express
+        Console.WriteLine((int)method); // 3
+
+        var methodId = 3;
+        Console.WriteLine((ShippingMethod)methodId); // Express
+
+        Console.WriteLine(method.ToString()); // Express
+
+        var methodName = "Express";
+        var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+        Console.WriteLine(shippingMethod); // Express
     }
+
 }
