@@ -100,6 +100,53 @@ class Program
 
         Console.WriteLine(string.Format("array1[0]: {0}, array2[0]: {1}", array1[0], array2[0])); // array1[0]: 0, array2[0]: 0
 
+        // [For loops]
+
+        // Ascending
+        for (var i = 1; i <= 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                Console.WriteLine(i); // 2 4 6 8 10
+            }
+        }
+
+        // Descending
+        for (var i = 10; i >= 1; i--)
+        {
+            if (i % 2 == 0)
+            {
+                Console.WriteLine(i); // 10 8 6 4 2
+            }
+        }
+
+        // [Foreach loop]
+        var name = "Robin";
+        foreach (var character in name)
+        {
+            Console.WriteLine(character); // R o b i n
+        }
+
+        var numbers2 = new int[] { 1, 2, 3, 4 };
+        foreach (var number in numbers2)
+        {
+            Console.WriteLine(number); // 1, 2, 3, 4
+        }
+
+        // [While loop]
+        while (true)
+        {
+            Console.Write("Type your name: ");
+            var input = Console.ReadLine();
+
+            if (!String.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("@Echo: " + input);
+                continue;
+            }
+
+            break;
+        }
     }
 
 }
