@@ -379,7 +379,7 @@ class Program
         var extension = path2.Substring(dotIndex);
         Console.WriteLine("Extension: " + Path.GetExtension(path2)); // .cs
         Console.WriteLine("File Name: " + Path.GetFileName(path2)); // HelloWorld.cs
-        Console.WriteLine("File Name without Extension: " + Path.GetFileNameWithoutExtension(path)); // HelloWorld
+        Console.WriteLine("File Name without Extension: " + Path.GetFileNameWithoutExtension(path2)); // HelloWorld
         Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path2)); // C:\Projects\CSharpFundamentals\HelloWorld
 
     }
