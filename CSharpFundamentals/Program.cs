@@ -351,5 +351,36 @@ class Program
             Header
             ++++++++++
         */
+
+        // File and FileInfo classes
+
+        var path1 = @"c:\somefile.jpg";
+        File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
+        File.Delete(path1);
+        if (File.Exists(path1))
+        {
+            //
+        }
+
+        var content = File.ReadAllText(path1);
+
+        var fileInfo = new FileInfo(path1);
+        fileInfo.CopyTo("...");
+        fileInfo.Delete();
+
+        if (fileInfo.Exists)
+        {
+            //
+        }
+
+        // Path class
+        var path2 = @"C:\Projects\CSharpFundamentals\HelloWorld\HelloWorld.cs";
+        var dotIndex = path2.IndexOf('.');
+        var extension = path2.Substring(dotIndex);
+        Console.WriteLine("Extension: " + Path.GetExtension(path2)); // .cs
+        Console.WriteLine("File Name: " + Path.GetFileName(path2)); // HelloWorld.cs
+        Console.WriteLine("File Name without Extension: " + Path.GetFileNameWithoutExtension(path)); // HelloWorld
+        Console.WriteLine("Directory Name: " + Path.GetDirectoryName(path2)); // C:\Projects\CSharpFundamentals\HelloWorld
+
     }
 }
